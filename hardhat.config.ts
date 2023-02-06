@@ -13,7 +13,9 @@ const config: HardhatUserConfig = {
     }
   },
   gasReporter: {
-    enabled: true
+    enabled: true,
+    currency: "USD",
+    coinmarketcap: "INSERT_YOUR_COINMARKER_API_KEY"
   }
 
 };
