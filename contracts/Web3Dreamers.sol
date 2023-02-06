@@ -11,7 +11,7 @@ contract Web3Dreamers is ERC1155, ERC1155Supply {
     address private immutable OWNER;
     mapping(address => uint256) public allowedDiscount;
 
-    constructor(address[] memory users,uint256 _price)
+    constructor(address[] memory users, uint256 _price)
         ERC1155("ipfs://Qmaa6TuP2s9pSKczHF4rwWhTKUdygrrDs8RmYYqCjP3Hye/"){
         OWNER = msg.sender;
         price = _price;
@@ -59,7 +59,7 @@ contract Web3Dreamers is ERC1155, ERC1155Supply {
    
     function withdraw() external onlyOwner {
         (bool success, ) = (msg.sender).call{value: address(this).balance}("");
-        require(success, "WITHDRAW_FAILED");
+        require(success, "failed");
     }
 
     function _beforeTokenTransfer(
